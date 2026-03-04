@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Geschichten | Dominic Hladek</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <div class="logo">Dominic Hladek</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="autor.html">Autor</a>
+    <a href="romane.html">Romane</a>
+    <a href="geschichten.html">Geschichten</a>
+    <a href="rpg.html">RPG</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="faq.html">FAQ</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Geschichten</h1>
+  <div class="works">
+    <div class="work">
+      <img src="img/story-placeholder.jpg" alt="Geschichte Bild" style="max-width:150px;">
+      <h2>Titel der Geschichte 2</h2>
+      <p>Jahr: xxxx</p>
+      <p>xxx.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>© 2026 Dominic Hladek</p>
+  <div class="social">
+    <span>[FB]</span>
+    <span>[X]</span>
+    <span>[IG]</span>
+  </div>
+</footer>
+</body>
+</html>
