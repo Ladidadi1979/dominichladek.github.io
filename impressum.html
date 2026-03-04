@@ -1,7 +1,45 @@
-<h1>Impressum</h1>
-<p>Dominic Hladek<br>
-Bussardweg 28<br>
-61118 Bad Vilbel<br>
-Deutschland</p>
-<p>Email: <a href="mailto:dominic.hladek@googlemail.com">Dominic [dot] Hladek [ät] googlemail [dot] com</a></p>
-<p>Verantwortlich für den Inhalt gemäß § 55 Abs. 2 RStV: Dominic Hladek</p>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impressum | Dominic Hladek</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <div class="logo">Dominic Hladek</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="autor.html">Autor</a>
+    <a href="romane.html">Romane</a>
+    <a href="geschichten.html">Geschichten</a>
+    <a href="rpg.html">RPG</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="faq.html">FAQ</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Impressum</h1>
+  <p>Dominic Hladek<br>
+  Bussardweg 28<br>
+  61118 Bad Vilbel<br>
+  Deutschland</p>
+  <p>Email: <a href="mailto:dominic.hladek@googlemail.com">Dominic [dot] Hladek [ät] googlemail [dot] com</a></p>
+  <p>Verantwortlich für den Inhalt gemäß § 55 Abs. 2 RStV: Dominic Hladek</p>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+fetch('footer.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('footer-placeholder').innerHTML = data;
+  });
+</script>
+</body>
+</html>
+
+
