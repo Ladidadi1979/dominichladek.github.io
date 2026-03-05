@@ -59,7 +59,23 @@ main {
   background-color: #f3e0b5;
   padding: 1em;
   border-radius: 6px;
-  width: calc(50% - 1em);
+  width: calc(100% - 1em);
+}
+
+.work-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+.work-header img {
+  max-width: 150px;
+  height: auto;
+}
+
+.work-header h3 {
+  margin: 0;
 }
 
 footer {
