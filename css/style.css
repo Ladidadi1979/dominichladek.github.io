@@ -57,9 +57,9 @@ main {
 
 .work {
   background-color: #f3e0b5;
-  padding: 1em;
+  padding: 1.5em;
   border-radius: 6px;
-  width: calc(100% - 1em);
+  margin-bottom: 2em;
 }
 
 .work-header {
@@ -76,6 +76,31 @@ main {
 
 .work-header h3 {
   margin: 0;
+}
+
+.work-top {
+  display: flex;
+  gap: 2em;
+  align-items: flex-start;
+}
+
+.work-image img {
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.work-meta {
+  flex: 1;
+}
+
+.work-meta h3 {
+  margin-top: 0;
+}
+
+.work-description {
+  margin-top: 1.5em;
 }
 
 footer {
