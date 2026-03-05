@@ -98,6 +98,10 @@ main {
   flex: 1;
 }
 
+.work-meta strong {
+  color: #333;
+}
+
 .work-meta h2 {
   margin-top: 0;
   margin-bottom: 1em;
