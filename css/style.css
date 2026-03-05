@@ -51,8 +51,8 @@ main {
 
 .works {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1em;
+  flex-direction: column;
+  gap: 2em;
 }
 
 .work {
@@ -80,13 +80,16 @@ main {
 
 .work-top {
   display: flex;
-  gap: 2em;
+  gap: 2.5em;
   align-items: flex-start;
 }
 
+.work-image {
+  flex: 0 0 350px;   /* feste Breite fürs Bild */
+}
+
 .work-image img {
-  width: 300px;
-  max-width: 100%;
+  width: 100%;
   height: auto;
   border-radius: 4px;
 }
@@ -95,8 +98,13 @@ main {
   flex: 1;
 }
 
-.work-meta h3 {
+.work-meta h2 {
   margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.work-meta p {
+  margin: 0.3em 0;
 }
 
 .work-description {
