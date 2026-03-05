@@ -85,7 +85,7 @@ main {
 }
 
 .work-image {
-  flex: 0 0 350px;   /* feste Breite fürs Bild */
+  flex: 0 0 400px;   /* feste Breite fürs Bild */
 }
 
 .work-image img {
