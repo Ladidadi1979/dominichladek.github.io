@@ -286,24 +286,30 @@
 		const sections = document.querySelectorAll("section.edition");
 		const navLinks = document.querySelectorAll(".sidebar a");
 		const observer = new IntersectionObserver(entries => {
+			let visibleSection = null;
+			let maxRatio = 0;
+			
 			entries.forEach(entry => {
-				if(entry.isIntersecting){
-					navLinks.forEach(link => {
-					link.classList.remove("active");
-					});
-					const id = entry.target.getAttribute("id");
-				const activeLink = document.querySelector('.sidebar a[href="#' + id + '"]');
-					if(activeLink){
-						activeLink.classList.add("active");
-					}
+				if(entry.intersectionRatio > maxRatio){
+					maxRatio = entry.intersectionRatio;
+					visibleSection = entry.target;
 				}
 			});
+			
+			if(visibleSection){
+				navLinks.forEach(link => link.classList.remove("active"));
+			
+				const id = visibleSection.getAttribute("id");
+				const activeLink = document.querySelector('.sidebar a[href="#'+id+'"]');
+				
+				if(activeLink){
+					activeLink.classList.add("active");
+				}
+			}
 		},{
-			threshold:0.4
+			threshold:[0.1,0.25,0.5,0.75]
 		});
-		sections.forEach(section => {
-			observer.observe(section);
-		});
+		sections.forEach(section => observer.observe(section));
 	</script>
 	
 	</body>
