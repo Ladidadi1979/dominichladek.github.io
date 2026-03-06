@@ -285,31 +285,26 @@
 	<script>
 		const sections = document.querySelectorAll("section.edition");
 		const navLinks = document.querySelectorAll(".sidebar a");
-		const observer = new IntersectionObserver(entries => {
-			let visibleSection = null;
-			let maxRatio = 0;
+		function setActiveLink() {
+				let currentSection = null;
+				sections.forEach(section => {
+					const sectionTop = section.offsetTop - 150;
+					if(window.scrollY >= sectionTop){
+						currentSection = section;
+					}
+				});
 			
-			entries.forEach(entry => {
-				if(entry.intersectionRatio > maxRatio){
-					maxRatio = entry.intersectionRatio;
-					visibleSection = entry.target;
+				if(currentSection){
+					navLinks.forEach(link => link.classList.remove("active"));
+					const id = currentSection.getAttribute("id");
+					const activeLink = document.querySelector('.sidebar a[href="#'+id+'"]');
+					if(activeLink){
+						activeLink.classList.add("active");
+					}
 				}
-			});
-			
-			if(visibleSection){
-				navLinks.forEach(link => link.classList.remove("active"));
-			
-				const id = visibleSection.getAttribute("id");
-				const activeLink = document.querySelector('.sidebar a[href="#'+id+'"]');
-				
-				if(activeLink){
-					activeLink.classList.add("active");
-				}
-			}
-		},{
-			threshold:[0.1,0.25,0.5,0.75]
-		});
-		sections.forEach(section => observer.observe(section));
+		}
+		window.addEventListener("scroll", setActiveLink);
+		setActiveLink();
 	</script>
 	
 	</body>
