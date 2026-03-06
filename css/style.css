@@ -39,6 +39,10 @@ main {
   border-radius: 6px;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 .layout{
 display:flex;
 gap:40px;
