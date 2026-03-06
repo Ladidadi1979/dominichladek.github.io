@@ -43,6 +43,19 @@ html{
 scroll-behavior:smooth;
 }
 
+.sidebar a{
+text-decoration:none;
+color:#666;
+transition:0.2s;
+}
+
+.sidebar a.active{
+color:#000;
+font-weight:bold;
+border-left:3px solid #000;
+padding-left:8px;
+}
+
 .layout{
 display:flex;
 gap:40px;
