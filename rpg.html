@@ -22,11 +22,11 @@
 	<main>
 		<div class="layout">
 			<aside class="sidebar">
-			<h3>Bereiche</h3>
-			<ul>
-			<li><a href="#dsa5">DSA 5</a></li>
-			<li><a href="#dsa4">DSA 4</a></li>
-			</ul>
+				<h3>Bereiche</h3>
+				<ul>
+				<li><a href="#dsa5">DSA 5</a></li>
+				<li><a href="#dsa4">DSA 4</a></li>
+				</ul>
 			</aside>
 			<div class="content">
 				<h1>Rollenspielprodukte</h1>
@@ -111,5 +111,30 @@
 			});
 		</script>
 	</div>
+
+	<script>
+		const sections = document.querySelectorAll("section.edition");
+		const navLinks = document.querySelectorAll(".sidebar a");
+		const observer = new IntersectionObserver(entries => {
+			entries.forEach(entry => {
+				if(entry.isIntersecting){
+					navLinks.forEach(link => {
+					link.classList.remove("active");
+					});
+					const id = entry.target.getAttribute("id");
+				const activeLink = document.querySelector('.sidebar a[href="#' + id + '"]');
+					if(activeLink){
+						activeLink.classList.add("active");
+					}
+				}
+			});
+		},{
+			threshold:0.4
+		});
+		sections.forEach(section => {
+			observer.observe(section);
+		});
+	</script>
+	
 	</body>
 </html>
