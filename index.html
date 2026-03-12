@@ -8,18 +8,8 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header>
-  <div class="logo">Dominic Hladek</div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="autor.html">Autor</a>
-    <a href="romane.html">Romane</a>
-    <a href="geschichten.html">Geschichten</a>
-    <a href="rpg.html">RPG</a>
-    <a href="kontakt.html">Kontakt</a>
-    <a href="faq.html">FAQ</a>
-  </nav>
-</header>
+  
+<div id="header-placeholder"></div>
 
 <main>
   <section class="hero">
@@ -52,11 +42,25 @@
 <div id="footer-placeholder"></div>
 
 <script>
-fetch('footer.html')
-  .then(response => response.text())
+fetch("header.html")
+  .then(r => r.text())
   .then(data => {
-    document.getElementById('footer-placeholder').innerHTML = data;
+    document.getElementById("header-placeholder").innerHTML = data;
+
+    const links = document.querySelectorAll("nav a");
+    const currentPage = window.location.pathname.split("/").pop();
+
+    links.forEach(link => {
+      const linkPage = link.getAttribute("href");
+      if (linkPage === currentPage) {
+        link.classList.add("active");
+      }
+    });
   });
+
+fetch("footer.html")
+  .then(r => r.text())
+  .then(data => document.getElementById("footer-placeholder").innerHTML = data);
 </script>
 </body>
 </html>
