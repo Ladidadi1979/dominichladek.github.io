@@ -36,6 +36,28 @@ nav a.active {
   border-bottom: 2px solid #9ed8f3;
 }
 
+nav a {
+  position: relative;
+  text-decoration: none;
+}
+
+/* unsichtbarer Unterstrich */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background-color: #9ed8f3;
+  transition: width 0.3s ease;
+}
+
+/* beim Hover wächst die Linie */
+nav a:hover::after {
+  width: 100%;
+}
+
 main {
   max-width: 1200px;
   margin: 2em auto;
