@@ -127,6 +127,17 @@ color:#333;
 text-decoration:underline;
 }
 
+a {
+  color: #9ed8f3;      
+  text-decoration: none; 
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #f3e0b5;      
+  text-decoration: underline; 
+}
+
 .content{
 flex:1;
 }
