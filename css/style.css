@@ -239,7 +239,7 @@ flex:1;
 }
 
 .shop-links a img {
-  width: 200px;     
+  width: 120px;     
   object-fit: contain;
   transition: transform 0.3s;
 }
