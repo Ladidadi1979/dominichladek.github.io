@@ -99,14 +99,14 @@
 fetch("header.html")
   .then(r => r.text())
   .then(data => {
-    document.getElementById("header-placeholder").innerHTML = data;
+    // Header direkt als erstes Kind des Body einfügen
+    document.body.insertAdjacentHTML("afterbegin", data);
 
     const links = document.querySelectorAll("nav a");
     const currentPage = window.location.pathname.split("/").pop();
 
     links.forEach(link => {
-      const linkPage = link.getAttribute("href");
-      if (linkPage === currentPage) {
+      if (link.getAttribute("href") === currentPage) {
         link.classList.add("active");
       }
     });
