@@ -24,6 +24,20 @@ header .logo {
   color: #f3e0b5; /* warmes Papier-Gelb */
 }
 
+header .logo a {
+  color: #f3e0b5;
+  text-decoration: none;
+}
+
+header .logo a:hover {
+  color: #f3e0b5;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+}
+
 header nav a {
   color: #f3e0b5;
   text-decoration: none;
@@ -37,7 +51,13 @@ header nav a:hover {
 header nav a img {
   height: 18px;
   width: auto;
-  display: block;
+  vertical-align: middle;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+
+header nav a:hover img {
+  opacity: 1;
 }
 
 nav a.active {
