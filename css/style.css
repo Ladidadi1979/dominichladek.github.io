@@ -34,6 +34,12 @@ header nav a:hover {
   color: #9ed8f3; /* hellblauer Akzent */
 }
 
+header nav a img {
+  height: 18px;
+  width: auto;
+  display: block;
+}
+
 nav a.active {
   color: #9ed8f3;
   font-weight: bold;
