@@ -69,7 +69,7 @@ main {
   margin: 2em auto;
   padding: 2em;
   background-color: #fff;
-  color: ;
+  color: #222;
   border-radius: 6px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
@@ -131,7 +131,7 @@ a {
   transition: color 0.3s;
 }
 
-a:hover {
+main a:hover {
   color: #d4b76f;      
   text-decoration: underline; 
 }
