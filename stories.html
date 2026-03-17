@@ -152,5 +152,30 @@ fetch("footer.html")
   .then(r => r.text())
   .then(data => document.getElementById("footer-placeholder").innerHTML = data);
 </script>
+
+<script>
+	const sections = document.querySelectorAll("section.edition");
+	const navLinks = document.querySelectorAll(".sidebar a");
+	function setActiveLink() {
+			let currentSection = null;
+			sections.forEach(section => {
+				const sectionTop = section.offsetTop - 150;
+				if(window.scrollY >= sectionTop){
+					currentSection = section;
+				}
+			});
+		
+			if(currentSection){
+				navLinks.forEach(link => link.classList.remove("active"));
+				const id = currentSection.getAttribute("id");
+				const activeLink = document.querySelector('.sidebar a[href="#'+id+'"]');
+				if(activeLink){
+					activeLink.classList.add("active");
+				}
+			}
+	}
+	window.addEventListener("scroll", setActiveLink);
+	setActiveLink();
+</script>
 </body>
 </html>
