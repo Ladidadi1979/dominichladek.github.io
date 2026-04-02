@@ -96,5 +96,21 @@ fetch("footer.html")
   .then(r => r.text())
   .then(data => document.getElementById("footer-placeholder").innerHTML = data);
 </script>
+
+<script>
+  document.getElementById("loadMore").onclick = function() {
+  
+  let hidden = document.querySelectorAll(".work.hidden");
+  
+  for (let i = 0; i < 5 && i < hidden.length; i++) {
+  hidden[i].classList.remove("hidden");
+  }
+  
+  if(document.querySelectorAll(".work.hidden").length === 0){
+  this.style.display="none";
+  }
+  
+  };
+</script>
 </body>
 </html>
